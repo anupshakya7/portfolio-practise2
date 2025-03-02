@@ -5,9 +5,19 @@ function toggleMenu(){
     icon.classList.toggle("open");
 }
 
-var typed = new Typed('.input',{
+const typed = new Typed('.input',{
     strings:["Full Stack Developer","Laravel Developer","Vue Developer","React Developer","Wordpress Developer"],
     typedSpeed:200,
     backSpeed:100,
     loop:true
 });
+
+//Top Progress Bar
+const filled = document.querySelector('.filled');
+
+function update(){
+    filled.style.width = `${((window.scrollY)/(document.body.scrollHeight - window.innerHeight) * 100)}%`;
+    requestAnimationFrame(update);
+}
+
+update();

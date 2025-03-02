@@ -1,8 +1,15 @@
-function toggleMenu(){
+function toggleMenu(type){
     const menu = document.querySelector('.menu-links');
     const icon = document.querySelector('.hamburger-icon');
     menu.classList.toggle("open");
     icon.classList.toggle("open");
+   
+    if(type == 'parent'){
+        const audio = new Audio();
+        audio.src = './assets/audio/menu.mp3';
+        audio.play();
+    }
+   
 }
 
 const typed = new Typed('.input',{
